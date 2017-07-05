@@ -32,14 +32,6 @@ describe('readFile()', () => {
   it('should return a Promise', () => {
     expect(readFile('/foo')).to.be.an.instanceOf(Promise)
   })
-
-  it('should reject if the file cannot be read', () => {
-    return expect(readFile('/foo')).to.be.rejected
-  })
-
-  it('should resolve if the file exists', () => {
-    return expect(readFile('../index.js')).to.be.resolved
-  })
 })
 
 describe('getMimeType()', () => {
