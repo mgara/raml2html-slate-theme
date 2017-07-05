@@ -1,9 +1,10 @@
 'use strict'
 const expect = require('chai').expect
+const path = require('path')
 const rewire = require('rewire')
-const utilsModule = require('../lib/utils.js')
+const utilsModule = require(path.join(__dirname, '../lib/utils.js'))
 
-const testModule = rewire('../lib/utils.js')
+const testModule = rewire(path.join(__dirname, '../lib/utils.js'))
 
 describe('Utils exports', () => {
   it('should export a config function', () => {
@@ -31,6 +32,14 @@ describe('readFile()', () => {
 
   it('should return a Promise', () => {
     expect(readFile('/foo')).to.be.an.instanceOf(Promise)
+  })
+
+  it('should reject if the file cannot be read', () => {
+    return expect(readFile('/foo')).to.be.rejected
+  })
+
+  it('should resolve if the file exists', () => {
+    return expect(readFile(path.join(__dirname, './utils.test.js'))).to.be.fulfilled
   })
 })
 
