@@ -1,0 +1,12 @@
+{% set securityScheme = securitySchemes[_securedBy.schemeName] %}
+<b>Authorization :</b> {{_securedBy.schemeName}}
+<br>
+<b>Type :</b> {{ securityScheme.type}}
+<br>
+{% markdown %}
+{{ securityScheme.description }}
+{% endmarkdown %}
+
+{% for response in securityScheme.describedBy.responses %}
+
+{% endfor %}

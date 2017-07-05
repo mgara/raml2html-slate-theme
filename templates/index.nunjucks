@@ -1,9 +1,9 @@
 {% set comma = joiner() %}
 <h1 id="{{ getSafeId(title) }}">{{ title }} Documentation</h1>
 <p>
-{% if version %}<strong>version</strong> {{ version }}<br/>{% endif %}
-{% if baseUri %}<strong>baseUri</strong> {{ baseUri }}<br/>{% endif %}
-{% if protocols %}<strong>protocols</strong>
+{% if version %}<strong>version</strong>:  {{ version }}<br/>{% endif %}
+{% if baseUri %}<strong>baseUri</strong>:  {{ baseUri }}<br/>{% endif %}
+{% if protocols %}<strong>protocols</strong>:
   {% for protocol in protocols -%}
     {{ comma() }} {{protocol}}
   {%- endfor %}
@@ -11,6 +11,24 @@
 {% endif -%}
 {% if mediaType %}<strong>mediaType</strong> {{ mediaType }}{% endif %}
 </p>
+<h1 id="description"> Description</h1>
+<p>
+{% markdown %}
+{{ description }}
+{% endmarkdown %}
+</p>
+
+{% if securitySchemes %}
+<h1 id="auth">Authentication</h1>
+<p>
+{% if securedBy.length %}
+   {% for _securedBy in securedBy %}
+        {% include "./security-scheme.nunjucks" %}
+   {% endfor %}
+ {% endif %}
+</p>
+
+{% endif %}
 
 {% for item in documentation %}
 <h1 id="{{ getSafeId(item.title) }}">{{ item.title }}</h1>
@@ -22,7 +40,6 @@
   </div>
 </div>
 {% endfor %}
-
 {% for resource in resources %}
 {% if resource.displayName %}
   <h1 id="{{ getSafeId(resource.displayName) }}">{{ resource.displayName }}</h1>
