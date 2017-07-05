@@ -17,23 +17,23 @@ under the License.
 ////////////////////
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg = #FAFCFC
-$examples-bg = #2D3134
-$dark-box-bg = #2D3134
-$code-bg = #272B2D
-$code-annotation-bg = #2D3134
-$nav-subitem-bg = transparent
-$nav-active-bg = transparent
+$nav-bg = #393939
+$examples-bg = #393939
+$dark-box-bg = #393939
+$code-bg = #292929
+$code-annotation-bg = #393939
+$nav-subitem-bg = #292929
+$nav-active-bg = #2467af
 $lang-select-border = transparent
 $lang-select-bg = #242729
 
 // feel free to change this to blue or something
-$lang-select-active-bg = #2d92c8
+$lang-select-active-bg = #393939
 
 // color of language tab bg when mouse is pressed
 $lang-select-pressed-bg = #2d92c8
 
-$main-bg = #FFFFFF
+$main-bg = #eaf2f6
 $aside-notice-bg = #8fbcd4
 $aside-warning-bg = #c97a7e
 $aside-success-bg = #6ac174
@@ -44,9 +44,9 @@ $search-notice-bg = #c97a7e
 ////////////////////
 
 // main content text color
-$main-text = #4c555a
-$nav-text = #4c555a
-$nav-active-text = #2d92c8
+$main-text = #333
+$nav-text = #fff
+$nav-active-text = #fff
 $nav-hover-text = #2F3437
 
 // color of unselected language tab text
@@ -63,10 +63,10 @@ $lang-select-pressed-text = #fff
 ////////////////////
 
 // width of the navbar
-$nav-width = 220px
+$nav-width = 230px
 
 // portion of the screen taken up by code examples
-$examples-width = 55%
+$examples-width = 50%
 $content-width = 100% - $examples-width
 
 // margin between nav items and logo, ignored if search is active
@@ -101,8 +101,8 @@ $phone-width = $tablet-width - $nav-width
 ////////////////////
 
 $default-font
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif
-  font-size: 16px
+  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "å¾®è½¯é›…é»‘", STXihei, "åŽæ–‡ç»†é»‘", sans-serif;
+  font-size: 13px
 
 $header-font
   @extend $default-font
@@ -121,7 +121,7 @@ $font-icon-version = "4.0.3"
 // OTHER
 ////////////////////
 
-$nav-active-shadow = transparent
+$nav-active-shadow = #000
 $nav-footer-border-color = #666
 $nav-embossed-border-top = #000
 $nav-embossed-border-bottom = #939393

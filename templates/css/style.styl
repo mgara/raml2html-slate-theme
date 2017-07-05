@@ -47,8 +47,8 @@ embossed-bg()
   bottom: 0
   width: $nav-width
   background-color: $nav-bg
-  font-size: 14px
-  font-weight: 500
+  font-size: 13px;
+  font-weight: bold;
   // language selector for mobile devices
   .lang-selector
     display: none
@@ -114,7 +114,7 @@ embossed-bg()
     list-style: none
     margin: 0
     padding: 0
-    line-height: 40px
+    line-height: 30px
   li
     color: $nav-text
     transition-property: background
@@ -134,7 +134,7 @@ embossed-bg()
     font-weight: 500
     .tocify-item>a
       padding-left: ($nav-padding + $nav-indent)
-      font-size: 14px
+      font-size: 12px
     & > li:last-child
       box-shadow: none
       // otherwise it'll overflow out of the subheader
@@ -145,7 +145,7 @@ embossed-bg()
       font-weight: 500
       .tocify-item>a
         padding-left: ($nav-padding + $nav-indent + $nav-indent*3)
-        font-size: 14px
+        font-size: 12px
         & > li:last-child
           box-shadow: none
           // otherwise it'll overflow out of the subheader
@@ -156,7 +156,7 @@ embossed-bg()
         font-weight: 500
         .tocify-item>a
           padding-left: ($nav-padding + $nav-indent + $nav-indent*5)
-          font-size: 14px
+          font-size: 12px
           & > li:last-child
             box-shadow: none
             // otherwise it'll overflow out of the subheader
@@ -233,8 +233,6 @@ embossed-bg()
   background-color: $lang-select-bg
   width: 100%
   font-weight: bold
-  padding: 16px
-  padding-left: 30px
   a
     display: block
     float: left
@@ -243,7 +241,6 @@ embossed-bg()
     padding: 0 10px
     line-height: 30px
     outline: 0
-    border-radius: 4px
     &:active, &:focus
       background-color: $lang-select-pressed-bg
       color: $lang-select-pressed-text
@@ -261,6 +258,7 @@ embossed-bg()
 .content
   // to place content above the dark box
   position: relative
+  text-shadow: 0px 1px 0px #fff
   z-index: 30
   &:after
     content: ''
@@ -278,6 +276,9 @@ embossed-bg()
     clear: both
   h1
     @extend $header-font
+
+
+
     font-size: 30px
     padding-top: 0.5em
     padding-bottom: 0.5em
@@ -285,6 +286,7 @@ embossed-bg()
     margin-bottom: $h1-margin-bottom
     margin-top: 2em
     border-top: 1px solid #ddd
+    background-image: linear-gradient(to bottom, #fff, #f9f9f9);
   h1:first-child, div:first-child + h1
     border-top-width: 0
     margin-top: 0
@@ -308,8 +310,8 @@ embossed-bg()
     font-size: 10px
   hr
     margin: 2em 0
-    border-top: 1px solid $examples-bg
-    border-bottom: 1px solid $main-bg
+    border-top: 0px solid $examples-bg
+    border-bottom: 0px solid $main-bg
   table
     margin-bottom: 1em
     overflow: auto
@@ -392,6 +394,7 @@ embossed-bg()
       padding-right: $main-padding
       box-sizing: border-box
       display: block
+      background-color: $main-bg;
     hr
       margin-top: 0
       border-top: 1px solid #ccc
@@ -403,6 +406,7 @@ embossed-bg()
 ////////////////////////////////////////////////////////////////////////////////
 // This is all the stuff that appears in the right half of the page
 .set-examples
+  text-shadow: none !important
   margin-left: $content-width
   position: relative
   width: $examples-width
@@ -412,8 +416,11 @@ embossed-bg()
   & > h1, & > h2, & > h3, & > h4, & > h5, & > h6, & > p, & > table, & > ul, & > ol, & > aside, & > dl
     padding: 0px $code-annotation-padding
 
-  hr
-    margin-top: 4em
+  & > h3
+    font-weight: 200
+
+.toc-ignore
+  font-weight: 200
 
 .content
   pre, blockquote
